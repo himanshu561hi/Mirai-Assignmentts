@@ -41,7 +41,7 @@ The Identity Echo Interface/
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/himanshu561hi/Mirai-Assignmentts.git
 ```
 
 ### 2. Navigate to the Project Directory
@@ -90,22 +90,6 @@ Open the URL in your browser to access the application.
    - Displays a warning if the message is missing.
    - Displays a success message when both fields are provided.
 5. View the estimated AI token consumption for your message.
-
----
-
-## Token Cost Estimator
-
-The application includes a simple token estimation feature based on the common approximation:
-
-```
-1 Token ≈ 4 Characters
-```
-
-For every submitted message, the application calculates:
-
-- Total characters
-- Estimated token count
-- Displays the result using Streamlit's information component
 
 ---
 
