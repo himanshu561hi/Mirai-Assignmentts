@@ -12,6 +12,6 @@ Each assignment is organized in a separate folder with its own source code and d
 
 ## Author
 
-**Himanshu Gupta**
-**B.Tech | AI & Full Stack Developer**
+**Himanshu Gupta**  
+**B.Tech | AI & Full Stack Developer**  
 **himanshu561hi@gmail.com**
