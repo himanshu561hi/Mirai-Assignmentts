@@ -64,13 +64,13 @@ Throughout this internship, I will be working with:
 1. Clone this repository.
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/himanshu561hi/Mirai-Assignmentts.git
 ```
 
 2. Navigate to the desired assignment folder.
 
 ```bash
-cd "Assignment Folder Name"
+cd "MIRAI ASSIGNMENTS"
 ```
 
 3. Install dependencies.
