@@ -1,4 +1,4 @@
-# MirAI Virtual Summer Internship 2026
+# MiraI Virtual Summer Internship 2026
 
 This repository contains all the assignments and projects completed during the **MiraI School of Technology – Virtual Summer Internship 2026 (AI Builder Track)**.
 
