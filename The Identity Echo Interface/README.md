@@ -89,7 +89,6 @@ Open the URL in your browser to access the application.
    - Displays an error if the name is missing.
    - Displays a warning if the message is missing.
    - Displays a success message when both fields are provided.
-5. View the estimated AI token consumption for your message.
 
 ---
 
@@ -102,8 +101,6 @@ Open the URL in your browser to access the application.
 - Error handling
 - Warning messages
 - Success confirmation
-- Token usage estimation
-- Character statistics
 
 ---
 
