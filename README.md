@@ -1,4 +1,4 @@
-# 🚀 MirAI School of Technology – Virtual Summer Internship 2026
+# MirAI School of Technology – Virtual Summer Internship 2026
 
 Welcome to my internship repository!
 
@@ -35,7 +35,7 @@ MirAI-Internship/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 Throughout this internship, I will be working with:
 
@@ -48,7 +48,7 @@ Throughout this internship, I will be working with:
 
 ---
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 - Build interactive web applications using Streamlit.
 - Understand AI application development fundamentals.
@@ -87,7 +87,7 @@ python3 -m streamlit run app.py
 
 ---
 
-## 📌 Progress
+## Progress
 
 - Assignment 1 Completed
 - Assignment 2 Completed
