@@ -1,6 +1,6 @@
 # 🚀 MirAI School of Technology – Virtual Summer Internship 2026
 
-Welcome to my internship repository! 👋
+Welcome to my internship repository!
 
 This repository contains all the assignments, projects, and practical tasks completed during the **MirAI School of Technology – Virtual Summer Internship 2026 (AI Builder Track)**.
 
@@ -8,7 +8,7 @@ Each assignment is organized in a separate folder with its own source code, docu
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 MirAI-Internship/
@@ -25,13 +25,13 @@ MirAI-Internship/
 
 ---
 
-## 📚 Assignments
+## Assignments
 
-| Assignment                     | Description                                                                                   | Status         |
-| ------------------------------ | --------------------------------------------------------------------------------------------- | -------------- |
-| 🧮 Calculator Using Streamlit  | A basic calculator built with Streamlit supporting arithmetic operations.                     | ✅ Completed   |
-| 📡 The Identity Echo Interface | A Streamlit application that collects user input, validates it, and estimates AI token usage. | ✅ Completed   |
-| 🚧 Upcoming Assignments        | Future internship assignments and AI projects.                                                | 🔄 In Progress |
+| Assignment                  | Description                                                                                   | Status      |
+| --------------------------- | --------------------------------------------------------------------------------------------- | ----------- |
+| Calculator Using Streamlit  | A basic calculator built with Streamlit supporting arithmetic operations.                     | Completed   |
+| The Identity Echo Interface | A Streamlit application that collects user input, validates it, and estimates AI token usage. | Completed   |
+| Upcoming Assignments        | Future internship assignments and AI projects.                                                | In Progress |
 
 ---
 
@@ -59,7 +59,7 @@ Throughout this internship, I will be working with:
 
 ---
 
-## ▶️ Running an Assignment
+## Running an Assignment
 
 1. Clone this repository.
 
@@ -89,26 +89,26 @@ python3 -m streamlit run app.py
 
 ## 📌 Progress
 
-- ✅ Assignment 1 Completed
-- ✅ Assignment 2 Completed
-- 🔄 More assignments coming soon...
+- Assignment 1 Completed
+- Assignment 2 Completed
+- More assignments coming soon...
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Himanshu Gupta**
 
-BCA Student | AI & Full Stack Developer
+B.Tech Student | AI & Full Stack Developer
 
 ---
 
-## 🌟 Acknowledgements
+## Acknowledgements
 
 Special thanks to **MirAI School of Technology** for providing hands-on learning opportunities through the **Virtual Summer Internship 2026 – AI Builder Track**.
 
 ---
 
-## 📄 License
+## License
 
 This repository is maintained for educational and learning purposes as part of the MirAI School of Technology Internship Program.
