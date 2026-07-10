@@ -118,4 +118,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Author
 
-Developed for Mirai Assignments.
+Developed by Himanshu for Mirai Assignments.
