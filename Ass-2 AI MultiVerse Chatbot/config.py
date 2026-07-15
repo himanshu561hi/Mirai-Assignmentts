@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # App Details
-APP_TITLE = "AI MultiVerse Chatbot"
+APP_TITLE = "The MULTIVERSE OF CHATBOTS"
 APP_SUBTITLE = "Explore Multiple AI Personalities in One Interface"
 
 # Groq Configuration

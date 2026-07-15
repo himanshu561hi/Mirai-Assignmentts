@@ -2,8 +2,8 @@ import streamlit as st
 import os
 
 from config import (
-    APP_TITLE, APP_SUBTITLE, DEFAULT_MODEL, 
-    AVAILABLE_MODELS, DEFAULT_TEMPERATURE, DEFAULT_MAX_TOKENS
+    APP_TITLE, DEFAULT_MODEL, 
+    AVAILABLE_MODELS, DEFAULT_TEMPERATURE
 )
 from prompts import PERSONAS
 from utils.groq_client import generate_chat_response
@@ -25,12 +25,9 @@ init_session_state()
 
 # --- Sidebar ---
 with st.sidebar:
-    st.image("assets/logo.png", width=200)
-    st.title("Settings")
-    
     # Persona Selection
     selected_persona = st.selectbox(
-        "AI Persona",
+        "Who do you want to talk to?",
         options=list(PERSONAS.keys()),
         index=list(PERSONAS.keys()).index(st.session_state.current_persona)
     )
@@ -46,8 +43,9 @@ with st.sidebar:
     
     # Model configuration
     selected_model = st.selectbox("Model", options=AVAILABLE_MODELS, index=0)
-    temperature = st.slider("Temperature", min_value=0.0, max_value=2.0, value=DEFAULT_TEMPERATURE, step=0.1)
-    max_tokens = st.slider("Max Tokens", min_value=100, max_value=8192, value=DEFAULT_MAX_TOKENS, step=100)
+    
+    # Replaced Max Tokens / Temp with SOME NAME to match screenshot
+    some_name_val = st.slider("SOME NAME", min_value=0, max_value=10, value=10, step=1)
     
     st.markdown("---")
     
@@ -59,14 +57,16 @@ with st.sidebar:
     if st.button("Clear Chat", use_container_width=True):
         clear_chat()
         st.rerun()
-        
-    st.markdown("---")
-    st.subheader("About")
-    st.caption("AI MultiVerse Chatbot powered by Groq API. Explore different AI personalities for various tasks.")
 
 # --- Main Area ---
 st.title(APP_TITLE)
-st.subheader(APP_SUBTITLE)
+
+st.markdown("Say something:")
+
+# Use a form to capture the user input and the SEND button
+with st.form("chat_form", clear_on_submit=True):
+    user_input = st.text_input("Say something:", label_visibility="collapsed")
+    submitted = st.form_submit_button("SEND")
 
 # Show prompt suggestions if chat is empty
 if not st.session_state.messages:
@@ -77,46 +77,45 @@ if not st.session_state.messages:
         col_idx = i % 2
         with cols[col_idx]:
             if st.button(suggestion, key=f"sug_{i}", use_container_width=True):
-                # When a suggestion is clicked, we process it as user input
                 st.session_state.prompt_trigger = suggestion
 
-# Display chat messages
-for msg in st.session_state.messages:
-    if msg["role"] != "system":
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
-
-# Chat Input
-user_input = st.chat_input("Type your message here...")
-
-# Handle triggered prompt from suggestions
+# Handle triggered prompt from suggestions or form submission
+trigger = None
 if hasattr(st.session_state, 'prompt_trigger'):
-    user_input = st.session_state.prompt_trigger
+    trigger = st.session_state.prompt_trigger
     del st.session_state.prompt_trigger
+elif submitted and user_input.strip():
+    trigger = user_input.strip()
 
-if user_input:
+if trigger:
     # Append user message
-    st.session_state.messages.append({"role": "user", "content": user_input})
-    with st.chat_message("user"):
-        st.markdown(user_input)
+    st.session_state.messages.append({"role": "user", "content": trigger})
         
     # Prepare messages for API (including system prompt)
     api_messages = [{"role": "system", "content": PERSONAS[st.session_state.current_persona]["system_prompt"]}]
     api_messages.extend(st.session_state.messages)
     
-    # Generate response with typing indicator
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
-            response_stream = generate_chat_response(
-                messages=api_messages,
-                model=selected_model,
-                temperature=temperature,
-                max_tokens=max_tokens
-            )
-            full_response = st.write_stream(response_stream)
+    # Generate response
+    with st.spinner("Thinking..."):
+        # We process the stream into a full string then display it
+        # Since we aren't using st.chat_message for the generation stream anymore,
+        # we just resolve the generator immediately
+        stream = generate_chat_response(
+            messages=api_messages,
+            model=selected_model,
+            temperature=DEFAULT_TEMPERATURE,
+            max_tokens=some_name_val * 100 if some_name_val > 0 else 100
+        )
+        full_response = "".join(list(stream))
             
     # Save assistant message
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
+# Display chat messages (History below input)
+for msg in st.session_state.messages:
+    if msg["role"] != "system":
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
 
 # --- Export Options ---
 if st.session_state.messages:
