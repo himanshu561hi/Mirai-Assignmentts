@@ -2,6 +2,9 @@
 
 A beginner-friendly Streamlit web application that generates stunning AI artwork using the Pollinations AI Image API.
 
+![AI Image Studio App Interface](./image.png)
+
+### Example Generation
 ![AI Image Studio Generation Example](./example_image.png)
 *(Generated Example: Cyberpunk chai shop in India)*
 
